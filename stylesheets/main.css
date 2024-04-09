@@ -32,10 +32,12 @@ h1 {
   display: flex;
   justify-content: center;
   margin: auto;
-  border: 5px solid rgba(240, 46, 170, 0.4);
+  border: 5px solid rgb(255, 255, 255);
   margin-bottom: 30px;
   padding: 15px;
   border-radius: 15px;
+  box-shadow: rgb(255, 255, 255) 0px 2px 4px,
+  rgb(255, 255, 255) 0px 7px 13px -3px, rgb(37, 37, 37) 0px -3px 0px inset;
 }
 
 #options {
@@ -65,4 +67,23 @@ h1 {
   transition: 0.7s ease;
   box-shadow: none;
   cursor: pointer;
+}
+
+#incorrect {
+  margin-bottom: 10px
+}
+
+#yourAnswer{
+  background-color: rgb(255, 139, 139);
+  width: 300px;
+  min-height: 70px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#correctAnswer{
+  border-radius: 5px;
+  width: 300px;
+  min-height: 70px;
+  margin-bottom: 5px;
+  background-color: rgb(77, 221, 77);
 }

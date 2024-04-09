@@ -413,14 +413,14 @@ document.getElementById('begin')!.onclick = () => {
   
   function displayIncorrectQuestions() {
     const incorrectContainer = document.getElementById('incorrectQuestions');
-    incorrectContainer!.innerHTML = '<h3>Incorrect Questions:</h3>';
+    incorrectContainer!.innerHTML = '<h3 id="incorrect">Incorrect Questions:</h3>';
     questions.forEach((question, index) => {
       if (question.correctAnswer !== question.userAnswer) {
         const questionElement = document.createElement('div');
         questionElement.innerHTML = `
-          <p>${index + 1}. ${question.question}</p>
-          <p>Your answer: ${question.userAnswer || 'No answer'}</p>
-          <p>Correct answer: ${question.correctAnswer}</p>
+          <p>${question.question}</p>
+          <p id="yourAnswer">Your answer: ${question.userAnswer || 'No answer'}</p>
+          <p id="correctAnswer">Correct answer: ${question.correctAnswer}</p>
         `;
         incorrectContainer!.appendChild(questionElement);
       }
