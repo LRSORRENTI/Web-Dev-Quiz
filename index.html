@@ -8,7 +8,23 @@
   </head>
   <body>
     <h1>Web Dev Quiz</h1>
-    <p>test test</p>
+    <section aria-label="overview" id="overview" style="display: block;">
+      <p>Test your web development knowledge in this multiple choice quiz.</p>
+      <p>There are 30 questions, press the begin button to start the quiz.</p>
+      <button id="begin">Begin</button>
+    </section>
+    <div id="quiz-container" style="display: none;">
+      <h2 id="question"></h2>
+      <div id="options"></div>
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+      <p id="score"></p>
+    </div>
+    <div id="finalResults" style="display: none;">
+      <h2 id="finalScore"></h2>
+      <div id="incorrectQuestions"></div>
+    </div>
+       
     <script src="/javascript/index.js"></script>
   </body>
 </html>
