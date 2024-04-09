@@ -353,6 +353,7 @@ function calculateGrade(score: number, total: number) {
   
 
 document.getElementById('begin')!.onclick = () => {
+    document.getElementById('overview')!.style.display = 'none';
     document.getElementById('quiz-container')!.style.display = 'block';
     displayQuestion(currentQuestionIndex);
   };

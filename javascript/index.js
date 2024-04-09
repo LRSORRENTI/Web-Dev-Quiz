@@ -353,6 +353,7 @@ document.getElementById('next').onclick = function () {
     }
 };
 document.getElementById('begin').onclick = function () {
+    document.getElementById('overview').style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
     displayQuestion(currentQuestionIndex);
 };

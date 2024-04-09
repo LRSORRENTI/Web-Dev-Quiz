@@ -4,27 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
     <title>Web Dev Quiz</title>
   </head>
   <body>
     <h1>Web Dev Quiz</h1>
-    <section aria-label="overview" id="overview" style="display: block;">
+    <section aria-label="overview" id="overview" style="display: block">
       <p>Test your web development knowledge in this multiple choice quiz.</p>
       <p>There are 30 questions, press the begin button to start the quiz.</p>
       <button id="begin">Begin</button>
     </section>
-    <div id="quiz-container" style="display: none;">
+    <div id="quiz-container" style="display: none">
       <h2 id="question"></h2>
       <div id="options"></div>
-      <button id="prev">Previous</button>
-      <button id="next">Next</button>
+      <button id="prev" style="display: none">Previous</button>
+      <button id="next" style="display: none">Next</button>
       <p id="score"></p>
     </div>
-    <div id="finalResults" style="display: none;">
+    <div id="finalResults" style="display: none">
       <h2 id="finalScore"></h2>
       <div id="incorrectQuestions"></div>
     </div>
-       
+
     <script src="/javascript/index.js"></script>
   </body>
 </html>
