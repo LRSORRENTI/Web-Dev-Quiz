@@ -14,6 +14,8 @@ h1 {
   margin: auto;
   justify-content: center;
   margin-bottom: 30px;
+  border-bottom: 3px solid #FFF ;
+  border-top: 3px solid #FFF ;
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
 }
 
@@ -33,7 +35,7 @@ h1 {
   justify-content: center;
   line-height: 1em;
   max-width: 100%;
-  min-width: 140px;
+  /* min-width: 140px; */
   padding: 3px;
   text-decoration: none;
   user-select: none;
@@ -114,14 +116,14 @@ h1 {
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
-  font-size: 20px;
+  font-size: 15px;
   justify-content: center;
   line-height: 1em;
   transition: 0.5s ease;
   /* max-width: 100%; */
   margin-top: 20px;
   max-width: 500px;
-  min-width: 440px;
+  width: 350px;
   min-height: 50px;
   padding: 3px;
   text-decoration: none;
@@ -166,17 +168,36 @@ h1 {
     right: 20%;
     top: 30%;
   }
+  #options button {
+    font-size: 20px;
+    width: 400px;
+    min-height: 70px;
+  }
   #question {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 20%;
   }
 
+}
+#finalScore {
+  text-align: center;
+}
+
+#incorrectQuestions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  /* border: 2px solid red; */
+  text-align: center;
 }
 
 #incorrect {
   margin-bottom: 10px;
 }
+
+
 
 #yourAnswer {
   background-color: rgb(255, 139, 139);
@@ -184,11 +205,26 @@ h1 {
   min-height: 70px;
   border-radius: 5px;
   margin-bottom: 5px;
+  margin: auto;
 }
+
+p#yourAnswer {
+  padding-top: 10px;
+}
+
 #correctAnswer {
   border-radius: 5px;
   width: 300px;
   min-height: 70px;
   margin-bottom: 5px;
   background-color: rgb(77, 221, 77);
+  margin: auto;
+}
+
+p#correctAnswer {
+  padding-top: 10px;
+}
+
+#answer-p {
+  color: rgb(255, 255, 255);
 }

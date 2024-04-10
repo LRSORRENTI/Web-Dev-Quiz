@@ -418,7 +418,7 @@ document.getElementById('begin')!.onclick = () => {
       if (question.correctAnswer !== question.userAnswer) {
         const questionElement = document.createElement('div');
         questionElement.innerHTML = `
-          <p>${question.question}</p>
+          <p id="answer-p">${question.question}</p>
           <p id="yourAnswer">Your answer: ${question.userAnswer || 'No answer'}</p>
           <p id="correctAnswer">Correct answer: ${question.correctAnswer}</p>
         `;
