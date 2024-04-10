@@ -1,3 +1,26 @@
+# def parse_questions(file_path):
+#     questions = []
+#     with open(file_path, 'r') as file:
+#         current_question = {}
+#         for line in file:
+#             line = line.strip()
+#             if not line:
+#                 continue
+#             if line.startswith('(CA)'):
+#                 correct_answer = line[4:]
+#                 current_question['correctAnswer'] = correct_answer
+#                 # Add the correct answer to the options list
+#                 current_question.setdefault('options', []).append(correct_answer)
+#             elif line.endswith('?'):
+#                 if current_question:
+#                     questions.append(current_question)
+#                 current_question = {'question': line, 'options': []}
+#             else:
+#                 current_question.setdefault('options', []).append(line)
+#         if current_question:
+#             questions.append(current_question)
+#     return questions
+
 def parse_questions(file_path):
     questions = []
     with open(file_path, 'r') as file:
@@ -9,8 +32,9 @@ def parse_questions(file_path):
             if line.startswith('(CA)'):
                 correct_answer = line[4:]
                 current_question['correctAnswer'] = correct_answer
-                # Add the correct answer to the options list
-                current_question.setdefault('options', []).append(correct_answer)
+                # Add the correct answer to the options list if not already present
+                if correct_answer not in current_question.get('options', []):
+                    current_question.setdefault('options', []).append(correct_answer)
             elif line.endswith('?'):
                 if current_question:
                     questions.append(current_question)
@@ -20,6 +44,7 @@ def parse_questions(file_path):
         if current_question:
             questions.append(current_question)
     return questions
+
 
 def write_js_file(questions, output_file):
     with open(output_file, 'w') as file:
@@ -37,4 +62,4 @@ def write_js_file(questions, output_file):
 
 if __name__ == '__main__':
     questions = parse_questions(r'documents\Questions.txt')
-    write_js_file(questions, 'output.js')
+    write_js_file(questions, 'output2.js')

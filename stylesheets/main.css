@@ -6,7 +6,7 @@
 body {
   font-family: "Tilt Neon", sans-serif;
   background-color: rgb(39, 39, 39);
-  color: rgb(255, 255, 255);;
+  color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -14,13 +14,11 @@ h1 {
   margin: auto;
   justify-content: center;
   margin-bottom: 30px;
-  border-bottom: 3px solid #FFF ;
-  border-top: 3px solid #FFF ;
+  border-bottom: 3px solid #fff;
+  border-top: 3px solid #fff;
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
 }
 
-#begin {
-}
 .button-64 {
   align-items: center;
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
@@ -43,7 +41,7 @@ h1 {
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
-  margin: auto
+  margin: auto;
 }
 
 .button-64:active,
@@ -80,7 +78,8 @@ h1 {
 }
 
 #overview p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 #question {
@@ -95,6 +94,7 @@ h1 {
   border-radius: 15px;
   color: #ffffff;
   box-shadow: rgba(192, 74, 255, 0.807) 0 5px 20px -3px;
+  font-size: 20px;
 }
 
 #options {
@@ -177,8 +177,8 @@ h1 {
     position: absolute;
     top: 45%;
     left: 20%;
+    font-size: 35px;
   }
-
 }
 #finalScore {
   text-align: center;
@@ -196,8 +196,6 @@ h1 {
 #incorrect {
   margin-bottom: 10px;
 }
-
-
 
 #yourAnswer {
   background-color: rgb(255, 139, 139);
@@ -227,4 +225,6 @@ p#correctAnswer {
 
 #answer-p {
   color: rgb(255, 255, 255);
+  width: 300px;
+  margin: auto;
 }
