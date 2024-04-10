@@ -6,7 +6,7 @@
 body {
   font-family: "Tilt Neon", sans-serif;
   background-color: rgb(39, 39, 39);
-  color: #fff;
+  color: rgb(255, 255, 255);;
 }
 
 h1 {
@@ -14,6 +14,7 @@ h1 {
   margin: auto;
   justify-content: center;
   margin-bottom: 30px;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
 }
 
 #begin {
@@ -40,6 +41,7 @@ h1 {
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
+  margin: auto
 }
 
 .button-64:active,
@@ -72,6 +74,7 @@ h1 {
   display: flex;
   justify-content: center;
   margin: auto;
+  text-align: center;
 }
 
 #overview p {
@@ -88,7 +91,7 @@ h1 {
   padding: 15px;
   text-align: center;
   border-radius: 15px;
-  color: #d8fcff;
+  color: #ffffff;
   box-shadow: rgba(192, 74, 255, 0.807) 0 5px 20px -3px;
 }
 
@@ -156,6 +159,20 @@ h1 {
   box-shadow: none;
   cursor: pointer;
 } */
+
+@media (min-width: 1105px) {
+  #options {
+    position: absolute;
+    right: 20%;
+    top: 30%;
+  }
+  #question {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+  }
+
+}
 
 #incorrect {
   margin-bottom: 10px;
