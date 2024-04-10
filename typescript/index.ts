@@ -372,8 +372,11 @@ document.getElementById('begin')!.onclick = () => {
 
   function displayQuestion(index: any) {
     const question = questions[index];
+    // console.log(`Displaying question: ${index + 1}`); 
+    // console.log(`Question: ${question.question}`); 
+    // console.log(`Correct answer: ${question.correctAnswer}`); 
      // Reset the user's answer for the current question
-    question.userAnswer = null;
+    // question.userAnswer = null;
     document.getElementById('question')!.textContent = question.question;
     const optionsContainer = document.getElementById('options');
     optionsContainer!.innerHTML = '';
@@ -387,6 +390,7 @@ document.getElementById('begin')!.onclick = () => {
       button.textContent = option;
       button.onclick = () => {
         // Store the user's answer immediately
+        // console.log(`User selected: ${option}`);
         question.userAnswer = option;
       
         if (option === question.correctAnswer) {
