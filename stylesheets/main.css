@@ -206,6 +206,8 @@ h1 {
   margin: auto;
   border: 3px solid #fff;
   margin-bottom: 7px;
+  box-shadow: rgb(255, 139, 139) 0 4px 14px -3px;
+  font-weight: 700;
 }
 
 p#yourAnswer {
@@ -220,6 +222,8 @@ p#yourAnswer {
   margin: auto;
   border: 3px solid #fff;
   margin-bottom: 12px;
+  box-shadow: rgb(77, 221, 77) 0 4px 14px -3px;
+  font-weight: 700;
 }
 
 p#correctAnswer {
@@ -231,4 +235,5 @@ p#correctAnswer {
   width: 300px;
   margin: auto;
   margin-bottom: 12px;
+  font-weight: 700;
 }
