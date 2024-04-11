@@ -204,6 +204,8 @@ h1 {
   border-radius: 5px;
   margin-bottom: 5px;
   margin: auto;
+  border: 3px solid #fff;
+  margin-bottom: 7px;
 }
 
 p#yourAnswer {
@@ -214,9 +216,10 @@ p#yourAnswer {
   border-radius: 5px;
   width: 300px;
   min-height: 70px;
-  margin-bottom: 5px;
   background-color: rgb(77, 221, 77);
   margin: auto;
+  border: 3px solid #fff;
+  margin-bottom: 12px;
 }
 
 p#correctAnswer {
@@ -227,4 +230,5 @@ p#correctAnswer {
   color: rgb(255, 255, 255);
   width: 300px;
   margin: auto;
+  margin-bottom: 12px;
 }

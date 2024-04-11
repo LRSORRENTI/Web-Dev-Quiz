@@ -371,16 +371,25 @@ document.getElementById('begin')!.onclick = () => {
   
 
   function displayQuestion(index: any) {
-    const question = questions[index];
+    // const question = questions[index];
     // console.log(`Displaying question: ${index + 1}`); 
     // console.log(`Question: ${question.question}`); 
     // console.log(`Correct answer: ${question.correctAnswer}`); 
      // Reset the user's answer for the current question
     // question.userAnswer = null;
-    document.getElementById('question')!.textContent = question.question;
-    const optionsContainer = document.getElementById('options');
-    optionsContainer!.innerHTML = '';
+    // document.getElementById('question')!.textContent = question.question;
+    // const optionsContainer = document.getElementById('options');
+    // optionsContainer!.innerHTML = '';
   
+  const question = questions[index];
+  document.getElementById('question')!.textContent = question.question;
+  const optionsContainer = document.getElementById('options');
+  optionsContainer!.innerHTML = '';
+
+  // Set a default value for the user's answer if it's null
+  if (question.userAnswer === null) {
+    question.userAnswer = 'No answer';
+  }
     // Shuffle the options
     const options = [...question.options];
     shuffleArray(options);
@@ -415,22 +424,49 @@ document.getElementById('begin')!.onclick = () => {
     });
   }
   
+  // function displayIncorrectQuestions() {
+  //   const incorrectContainer = document.getElementById('incorrectQuestions');
+  //   incorrectContainer!.innerHTML = '<h3 id="incorrect">Incorrect Questions:</h3>';
+  //   questions.forEach((question, index) => {
+  //     if (question.correctAnswer !== question.userAnswer) {
+  //       const questionElement = document.createElement('div');
+  //       questionElement.innerHTML = `
+  //         <p id="answer-p">${question.question}</p>
+  //         <p id="yourAnswer">Your answer: ${question.userAnswer || 'No answer'}</p>
+  //         <p id="correctAnswer">Correct answer: ${question.correctAnswer}</p>
+  //       `;
+  //       incorrectContainer!.appendChild(questionElement);
+  //     }
+  //   });
+  // }
   function displayIncorrectQuestions() {
     const incorrectContainer = document.getElementById('incorrectQuestions');
     incorrectContainer!.innerHTML = '<h3 id="incorrect">Incorrect Questions:</h3>';
     questions.forEach((question, index) => {
       if (question.correctAnswer !== question.userAnswer) {
         const questionElement = document.createElement('div');
-        questionElement.innerHTML = `
-          <p id="answer-p">${question.question}</p>
-          <p id="yourAnswer">Your answer: ${question.userAnswer || 'No answer'}</p>
-          <p id="correctAnswer">Correct answer: ${question.correctAnswer}</p>
-        `;
+        const questionPara = document.createElement('p');
+        const userAnswerPara = document.createElement('p');
+        const correctAnswerPara = document.createElement('p');
+  
+        questionPara.innerText = question.question;
+        userAnswerPara.innerText = `Your answer: ${question.userAnswer}`;
+        correctAnswerPara.innerText = `Correct answer: ${question.correctAnswer}`;
+  
+        // Set the IDs for styling
+        questionPara.id = 'answer-p';
+        userAnswerPara.id = 'yourAnswer';
+        correctAnswerPara.id = 'correctAnswer';
+  
+        questionElement.appendChild(questionPara);
+        questionElement.appendChild(userAnswerPara);
+        questionElement.appendChild(correctAnswerPara);
+  
         incorrectContainer!.appendChild(questionElement);
       }
     });
   }
   
-
+  
   // Start the quiz
   displayQuestion(currentQuestionIndex);

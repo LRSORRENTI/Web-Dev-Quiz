@@ -368,15 +368,23 @@ function shuffleArray(array) {
     }
 }
 function displayQuestion(index) {
-    var question = questions[index];
+    // const question = questions[index];
     // console.log(`Displaying question: ${index + 1}`); 
     // console.log(`Question: ${question.question}`); 
     // console.log(`Correct answer: ${question.correctAnswer}`); 
     // Reset the user's answer for the current question
     // question.userAnswer = null;
+    // document.getElementById('question')!.textContent = question.question;
+    // const optionsContainer = document.getElementById('options');
+    // optionsContainer!.innerHTML = '';
+    var question = questions[index];
     document.getElementById('question').textContent = question.question;
     var optionsContainer = document.getElementById('options');
     optionsContainer.innerHTML = '';
+    // Set a default value for the user's answer if it's null
+    if (question.userAnswer === null) {
+        question.userAnswer = 'No answer';
+    }
     // Shuffle the options
     var options = __spreadArray([], question.options, true);
     shuffleArray(options);
@@ -407,13 +415,40 @@ function displayQuestion(index) {
         optionsContainer.appendChild(button);
     });
 }
+// function displayIncorrectQuestions() {
+//   const incorrectContainer = document.getElementById('incorrectQuestions');
+//   incorrectContainer!.innerHTML = '<h3 id="incorrect">Incorrect Questions:</h3>';
+//   questions.forEach((question, index) => {
+//     if (question.correctAnswer !== question.userAnswer) {
+//       const questionElement = document.createElement('div');
+//       questionElement.innerHTML = `
+//         <p id="answer-p">${question.question}</p>
+//         <p id="yourAnswer">Your answer: ${question.userAnswer || 'No answer'}</p>
+//         <p id="correctAnswer">Correct answer: ${question.correctAnswer}</p>
+//       `;
+//       incorrectContainer!.appendChild(questionElement);
+//     }
+//   });
+// }
 function displayIncorrectQuestions() {
     var incorrectContainer = document.getElementById('incorrectQuestions');
     incorrectContainer.innerHTML = '<h3 id="incorrect">Incorrect Questions:</h3>';
     questions.forEach(function (question, index) {
         if (question.correctAnswer !== question.userAnswer) {
             var questionElement = document.createElement('div');
-            questionElement.innerHTML = "\n          <p id=\"answer-p\">".concat(question.question, "</p>\n          <p id=\"yourAnswer\">Your answer: ").concat(question.userAnswer || 'No answer', "</p>\n          <p id=\"correctAnswer\">Correct answer: ").concat(question.correctAnswer, "</p>\n        ");
+            var questionPara = document.createElement('p');
+            var userAnswerPara = document.createElement('p');
+            var correctAnswerPara = document.createElement('p');
+            questionPara.innerText = question.question;
+            userAnswerPara.innerText = "Your answer: ".concat(question.userAnswer);
+            correctAnswerPara.innerText = "Correct answer: ".concat(question.correctAnswer);
+            // Set the IDs for styling
+            questionPara.id = 'answer-p';
+            userAnswerPara.id = 'yourAnswer';
+            correctAnswerPara.id = 'correctAnswer';
+            questionElement.appendChild(questionPara);
+            questionElement.appendChild(userAnswerPara);
+            questionElement.appendChild(correctAnswerPara);
             incorrectContainer.appendChild(questionElement);
         }
     });
